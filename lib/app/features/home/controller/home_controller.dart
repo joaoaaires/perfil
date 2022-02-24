@@ -45,11 +45,6 @@ class HomeController extends GetxController {
       title: "JavaScript",
     ),
     HomeItemButton(
-      icon: LineIcons.git,
-      link: "https://git-scm.com/",
-      title: "Git",
-    ),
-    HomeItemButton(
       icon: LineIcons.php,
       link: "https://www.php.net/",
       title: "PHP",
@@ -99,6 +94,11 @@ class HomeController extends GetxController {
       ),
       link: "https://nodejs.org/",
       title: "NodeJS",
+    ),
+    HomeItemButton(
+      icon: LineIcons.git,
+      link: "https://git-scm.com/",
+      title: "Git",
     ),
     HomeItemButton(
       icon: const ImageIcon(
