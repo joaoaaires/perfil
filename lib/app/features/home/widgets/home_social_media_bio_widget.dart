@@ -32,7 +32,7 @@ class HomeSocialMediaBioWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("BR"),
+              Text(""),
               spacerWidth(width: 15),
               Text("US"),
             ],
