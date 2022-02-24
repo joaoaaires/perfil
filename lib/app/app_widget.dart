@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:perfil/app/lang/app_localization.dart';
 
 import 'routes/app_pages.dart';
 import 'routes/app_routes.dart';
@@ -12,6 +13,8 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      locale: AppLocalization.locale,
+      translations: AppLocalization(),
       theme: AppTheme.theme,
       initialRoute: AppRoutes.initial,
       getPages: AppPages.pages,

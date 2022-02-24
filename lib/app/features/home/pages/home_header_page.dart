@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:perfil/app/features/home/widgets/home_social_media_widget.dart';
+
+import '../widgets/home_social_media_widget.dart';
 
 class HomeHeaderPage extends StatelessWidget {
   const HomeHeaderPage({ Key? key }) : super(key: key);

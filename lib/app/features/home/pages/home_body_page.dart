@@ -1,11 +1,12 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:perfil/app/features/home/controller/home_controller.dart';
 
 import '../../../core/util/spacer.dart';
 import '../../../core/util/text_custom.dart';
+import '../controller/home_controller.dart';
 import '../models/home_item_button.dart';
 
 class HomeBodyPage extends StatelessWidget {
@@ -30,13 +31,13 @@ class HomeBodyPage extends StatelessWidget {
             children: [
               buildSobreMim(),
               spacerHeight(height: 18),
-              buildList("Linguagens", controller.homeItensLinguagens),
+              buildList("linguagens".tr, controller.homeItensLinguagens),
               spacerHeight(height: 18),
-              buildList("Ferramentas", controller.homeItensFerramentas),
+              buildList("ferramentas".tr, controller.homeItensFerramentas),
               spacerHeight(height: 18),
-              const Text(
-                "Outros: Bulma, ExpressJS, Firebase, Redis, Selenium, VuetifyJS",
-                style: TextStyle(color: Colors.white),
+              Text(
+                "${"outros".tr}: Bulma, ExpressJS, Firebase, Redis, Selenium, VuetifyJS",
+                style: const TextStyle(color: Colors.white),
                 textAlign: TextAlign.justify,
               ),
             ],
@@ -49,19 +50,11 @@ class HomeBodyPage extends StatelessWidget {
   Widget buildSobreMim() {
     return Column(
       children: [
-        title(title: "Sobre mim"),
+        title(title: "sobremimtitulo".tr),
         spacerHeight(height: 25),
-        const Text(
-          '''
-    Atuo no mercado de desenvolvimento de softwares desde 2014, e ao longo desse tempo venho colecionado experiencias em diversas linguagens e ferramentas. Possuo especialidades em desenvolvimento back-end e mobile.
-
-    Busco novas e melhores maneiras de realizar minhas tarefas e criar meus códigos. E sempre estou pronto para receber uma crítica ou aprender algo novo. Gosto de manter meus projetos organizados e sempre cumprir prazos.
-
-    Além de um desenvolvedor, gosto de praticar esportes como futebol e vôlei, gosto de fazer uma caminhada quando possível. Fã de animes, gosto dos últimos lançamentos como Demon Slayer e Jujutsu Kaisen. Gosto muito de viajar e já conheci a cidade de Toronto no Canada, e tenho sonho de conhecer New York.
-
-📫 Entre em contato comigo através das redes sociais. :D
-        ''',
-          style: TextStyle(color: Colors.white),
+        Text(
+          "sobremimtext".tr,
+          style: const TextStyle(color: Colors.white),
           textAlign: TextAlign.justify,
         ),
       ],

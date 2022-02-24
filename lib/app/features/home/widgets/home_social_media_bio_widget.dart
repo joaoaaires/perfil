@@ -1,3 +1,4 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
@@ -27,6 +28,16 @@ class HomeSocialMediaBioWidget extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("BR"),
+              spacerWidth(width: 15),
+              Text("US"),
+            ],
+          ),
+          spacerHeight(height: 15),
           const Text(
             "JOAO AIRES",
             style: TextStyle(
@@ -35,9 +46,9 @@ class HomeSocialMediaBioWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const Text(
-            "Desenvolvedor",
-            style: TextStyle(
+          Text(
+            "desenvolvedor".tr,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 16,
             ),
