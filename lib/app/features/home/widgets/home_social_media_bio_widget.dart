@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/util/spacer.dart';
+import '../../../lang/app_localization.dart';
 import '../controller/home_controller.dart';
 import '../models/home_item_button.dart';
 
@@ -32,9 +33,15 @@ class HomeSocialMediaBioWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(""),
+              GestureDetector(
+                onTap: () => AppLocalization.changeLocale("Português"),
+                child: const Text("🇧🇷"),
+              ),
               spacerWidth(width: 15),
-              Text("US"),
+              GestureDetector(
+                onTap: () => AppLocalization.changeLocale("English"),
+                child: const Text("🇺🇸"),
+              ),
             ],
           ),
           spacerHeight(height: 15),
