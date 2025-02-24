@@ -1,8 +1,6 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/util/spacer.dart';
 import '../../../core/util/text_custom.dart';
@@ -79,36 +77,43 @@ class HomeBodyPage extends StatelessWidget {
   }
 
   Widget buildCard(HomeItemButton item) {
-    return Card(
-      color: const Color(0xFF363e45),
-      child: InkWell(
-        onTap: () => js.context.callMethod('open', [item.link]),
-        child: Container(
-          width: 120,
-          height: 85,
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            children: [
-              Expanded(
-                child: item.icon is IconData
-                    ? Icon(
-                        item.icon,
-                        color: Colors.white,
-                        size: 32,
-                      )
-                    : item.icon,
-              ),
-              Text(
-                item.title,
-                style: const TextStyle(color: Colors.white),
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-              )
-            ],
+    return Builder(builder: (context) {
+      return Card(
+        color: const Color(0xFF363e45),
+        child: InkWell(
+          onTap: () async {
+            final url = Uri.parse(item.link);
+            if (!await launchUrl(url)) {
+              throw Exception('Could not launch $url');
+            }
+          },
+          child: Container(
+            width: 120,
+            height: 85,
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              children: [
+                Expanded(
+                  child: item.icon is IconData
+                      ? Icon(
+                          item.icon,
+                          color: Colors.white,
+                          size: 32,
+                        )
+                      : item.icon,
+                ),
+                Text(
+                  item.title,
+                  style: const TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                )
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

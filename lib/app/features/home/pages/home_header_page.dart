@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 
 import '../widgets/home_social_media_widget.dart';
 
 class HomeHeaderPage extends StatelessWidget {
-  const HomeHeaderPage({ Key? key }) : super(key: key);
+  const HomeHeaderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class HomeHeaderPage extends StatelessWidget {
         image: DecorationImage(
           image: const AssetImage("images/background.jpg"),
           colorFilter: ColorFilter.mode(
-            colorPrimary.withOpacity(0.45),
+            colorPrimary.withValues(alpha: 0.0),
             BlendMode.multiply,
           ),
           fit: BoxFit.cover,

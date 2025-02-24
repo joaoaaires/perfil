@@ -1,8 +1,6 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/util/spacer.dart';
 import '../../../lang/app_localization.dart';
@@ -85,7 +83,12 @@ class HomeSocialMediaBioWidget extends StatelessWidget {
   }
 
   IconButton getIconButtonCustom(HomeItemButton item) => IconButton(
-        onPressed: () => js.context.callMethod('open', [item.link]),
+        onPressed: () async {
+          final url = Uri.parse(item.link);
+          if (!await launchUrl(url)) {
+            throw Exception('Could not launch $url');
+          }
+        },
         icon: Icon(
           item.icon,
           color: Colors.white,
