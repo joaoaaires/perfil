@@ -11,11 +11,11 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
-          children: const [
+          children: [
             HomeHeaderPage(),
             HomeBodyPage(),
             HomeFooterPage(),
